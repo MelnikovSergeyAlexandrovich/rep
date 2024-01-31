@@ -1,0 +1,19 @@
+﻿<Window x:Class="AssetsIS.ChooseFormatWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssetsIS"
+        mc:Ignorable="d"
+        Title="ChooseFormatWindow" Height="200" Width="200" MaxHeight="300" MaxWidth="300">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" TextAlignment="Center" FontSize="14"><Run Text="Выберите формат"/><LineBreak/><Run Text=" экспортируемого файла "/><LineBreak/><Run Text="(Формат по умолчанию - .xlsx)"/></TextBlock>
+        <RadioButton x:Name="xlsxChoosenRadioButton" Content=".xlsx (Для Excel)" Grid.Row="1" Checked="xlsxChoosenRadioButton_Checked"/>
+        <RadioButton x:Name="csvChoosenRadioButton" Content=".csv (Для Excel / Visual Studio)" Grid.Row="2" Checked="csvChoosenRadioButton_Checked"/>
+    </Grid>
+</Window>

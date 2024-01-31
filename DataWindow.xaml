@@ -1,0 +1,114 @@
+﻿<Window x:Class="AssetsIS.DataWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AssetsIS"
+        mc:Ignorable="d"
+        Title="DataWindow" Height="600" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+
+        <Frame Grid.ColumnSpan="6" Grid.Row="1" x:Name="AdminDataFrame"></Frame>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="0"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 0 0 0"
+            x:Name="RolesFrameButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Роли"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="RolesFrameButton_Click" >
+        </Button>
+
+        <Button
+            Grid.Column="1"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Right"
+            Margin="0,0,2,0"
+            x:Name="InventoryFrameButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Инвентарь"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="InventoryFrameButton_Click" />
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 0 0 0"
+            x:Name="UsersFrameButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Пользователи"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="UsersFrameButton_Click" >
+        </Button>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 0 0 0"
+            x:Name="FacilitiesFrameButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Помещения"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="FacilitiesFrameButton_Click" >
+        </Button>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="4"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 0 0 0"
+            x:Name="AssetsFrameButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Имущество"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="AssetsFrameButton_Click">
+        </Button>
+
+        <Button
+            Grid.Row="0"
+            Grid.Column="5"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Margin="0 0 0 0"
+            x:Name="LogOutButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Вернуться"
+            Width="130"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Cursor="Hand" Click="LogOutButton_Click" >
+        </Button>
+    </Grid>
+</Window>

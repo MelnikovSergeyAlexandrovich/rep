@@ -1,0 +1,135 @@
+﻿<Page x:Class="AssetsIS.UsersFrame"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:AssetsIS"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="UsersFrame">
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300*"/>
+            <ColumnDefinition Width="221*"/>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="83*"/>
+            <ColumnDefinition Width="98*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.4*"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition Height="0.3*"/>
+        </Grid.RowDefinitions>
+
+
+        <TextBox x:Name="LoginTextBox" 
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            materialDesign:HintAssist.Hint="Введите логин"
+            VerticalAlignment="Top" HorizontalAlignment="Center"
+            Height="45"
+            Width="220"
+            Grid.ColumnSpan="3"
+            Grid.Column="2"
+            Grid.Row="1"/>
+
+        <PasswordBox x:Name="PasswordTextBox"
+        VerticalAlignment="Top" HorizontalAlignment="Center"
+        Grid.Row="1"
+        Height="45"
+        Width="220"
+        Margin="0,56,0,0"
+        Grid.ColumnSpan="3"
+            Grid.Column="2"
+        Style="{StaticResource MaterialDesignFilledRevealPasswordBox}"
+        IsEnabled="{Binding ElementName=RevealPasswordFilledEnabled, Path=IsChecked}"
+        materialDesign:HintAssist.Hint="Введите пароль"
+        materialDesign:TextFieldAssist.HasClearButton="True"
+        />
+
+
+        <TextBox x:Name="PhoneNumberTextBox"
+            Style="{StaticResource MaterialDesignFilledTextBox}"
+            materialDesign:HintAssist.Hint="Введите номер телефона"
+            VerticalAlignment="Top" HorizontalAlignment="Center" 
+                 Margin="0,121,0,0"
+            Height="45"
+            Width="220"
+            Grid.ColumnSpan="3"
+            Grid.Column="2"
+            Grid.Row="1" Grid.RowSpan="2" />
+
+        <DataGrid Grid.Column="0" Grid.RowSpan="4" Grid.Row="1" x:Name="UsersDataGrid" SelectionChanged="UsersDataGrid_SelectionChanged" Grid.ColumnSpan="2"/>
+
+        <TextBlock Grid.Row="0" TextAlignment="Center" Grid.Column="0" Text="Пользователи" Background='#FF673AB7' Foreground="White" FontSize="16" Grid.ColumnSpan="2"/>
+        
+        <ComboBox x:Name="RoleIDComboBox" Height="30" Grid.Column="2" Grid.ColumnSpan="3" Margin="0 30 0 0" VerticalAlignment="Center" HorizontalAlignment="Center" Width="220" Grid.Row="2" Background="#FFF7F7F7"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="2"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            x:Name="CreateButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Создать"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="CreateButton_Click" Cursor="Hand"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="3"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            x:Name="DeleteButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Удалить"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="DeleteButton_Click"/>
+
+        <Button
+            Grid.Row="4"
+            Grid.Column="4"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            x:Name="ChangeButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Изменить"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="ChangeButton_Click"/>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="2"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Margin="12,0,0,15"
+            x:Name="ImportButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Импорт"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="ImportButton_Click">
+        </Button>
+
+        <Button
+            Grid.Row="3"
+            Grid.Column="4"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Left"
+            Margin="1,0,0,15"
+            x:Name="ExportButton"
+            Style="{StaticResource MaterialDesignRaisedButton}"
+            materialDesign:ButtonAssist.CornerRadius="10"
+            ToolTip="MaterialDesignRaisedButton with Round Corners"
+            Content="Экспорт"
+            IsEnabled="{Binding DataContext.ControlsEnabled, RelativeSource={RelativeSource FindAncestor, AncestorType=Window}}" Click="ExportButton_Click">
+        </Button>
+    </Grid>
+</Page>
